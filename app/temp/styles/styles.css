@@ -1126,9 +1126,9 @@ Instead edit gulp/templates/sprite */
   width: 20px;
   height: 19px;
   position: absolute;
+  z-index: 10;
   top: 10px;
   right: 10px;
-  z-index: 10;
 }
 
 .site-header__menu-icon::before {
@@ -1199,8 +1199,8 @@ Instead edit gulp/templates/sprite */
 @media (min-width: 800px) {
 
   .site-header__menu-content {
-    z-index: 1;
     opacity: 1;
+    z-index: 1;
     padding-top: 0;
     transform: scale(1);
   }
@@ -1213,7 +1213,7 @@ Instead edit gulp/templates/sprite */
 }
 
 .primary-nav {
-  padding-top: 5px;
+  padding-top: 10px;
 }
 
 @media (min-width: 800px) {
@@ -1243,8 +1243,8 @@ Instead edit gulp/templates/sprite */
 
 .primary-nav li {
   list-style: none;
-  padding-right: 7px;
   display: inline-block;
+  padding-right: 7px;
 }
 
 @media (min-width: 800px) {
@@ -1280,8 +1280,19 @@ Instead edit gulp/templates/sprite */
 @media (min-width: 800px) {
 
   .primary-nav a {
-    padding: 12px 0;
     font-size: 1rem;
+    padding: 12px 0;
     background-color: transparent;
   }
+}
+
+.reveal-item {
+  opacity: 0;
+  transition: all 1.5s ease-out;
+  transform: scale(1.15);
+}
+
+.reveal-item--is-visible {
+  opacity: 1;
+  transform: scale(1);
 }
