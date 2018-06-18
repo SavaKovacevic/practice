@@ -31,14 +31,14 @@ gulp.task('copySpriteGraphic', ['createSprite'], function() {
     .pipe(gulp.dest('./app/assets/images/sprites'));
 });
 
-gulp.task('copySpriteCss', ['createSprite'], function() {
+gulp.task('copySpriteCSS', ['createSprite'], function() {
   return gulp.src('./app/temp/sprite/css/*.css')
     .pipe(rename('_sprite.css'))
     .pipe(gulp.dest('./app/assets/styles/modules'));
 });
 
-gulp.task('endClean', ['copySpriteGraphic', 'copySpriteCss'], function() {
+gulp.task('endClean', ['copySpriteGraphic', 'copySpriteCSS'], function() {
   return del('./app/temp/sprite');
 });
 
-gulp.task('icons', ['beginClean','createSprite', 'copySpriteGraphic', 'copySpriteCss', 'endClean'])
+gulp.task('icons', ['beginClean', 'createSprite', 'copySpriteGraphic', 'copySpriteCSS', 'endClean']);
